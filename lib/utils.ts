@@ -89,3 +89,7 @@ export function getStyles(appConfig: AppConfig) {
     .filter(Boolean)
     .join('\n');
 }
+
+export const navigate = (url: string) => {
+  window.location.href = url;
+};

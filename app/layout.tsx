@@ -1,7 +1,12 @@
+import { appWithTranslation } from 'next-i18next';
 import { Public_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import { headers } from 'next/headers';
+import { Footer } from '@/components/Footer';
+import { Navigation } from '@/components/Navigation';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { ApplyThemeScript, ThemeToggle } from '@/components/app/theme-toggle';
+import { ConversationProvider } from '@/context/ConversationContext';
 import { cn, getAppConfig, getStyles } from '@/lib/utils';
 import '@/styles/globals.css';
 
@@ -63,12 +68,19 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <meta name="description" content={pageDescription} />
         <ApplyThemeScript />
       </head>
-      <body className="overflow-x-hidden">
-        {children}
-        <div className="group fixed bottom-0 left-1/2 z-50 mb-2 -translate-x-1/2">
-          <ThemeToggle className="translate-y-20 transition-transform delay-150 duration-300 group-hover:translate-y-0" />
-        </div>
-      </body>
+
+      <ConversationProvider>
+        <ThemeProvider>
+          <body className="overflow-x-hidden">
+            <Navigation />
+            {children}
+            <div className="group fixed bottom-0 left-1/2 z-50 mb-2 -translate-x-1/2">
+              <ThemeToggle className="translate-y-20 transition-transform delay-150 duration-300 group-hover:translate-y-0" />
+            </div>
+            <Footer />
+          </body>
+        </ThemeProvider>
+      </ConversationProvider>
     </html>
   );
 }
