@@ -1,0 +1,180 @@
+{
+  "en": {
+    "translation": {
+      "nav": {
+        "akademie": "Academy",
+        "login": "Login",
+        "logoutError": "Logout Failed",
+        "logoutSuccess": "Logged Out",
+        "logoutSuccessDesc": "You have been successfully logged out."
+      },
+      "hero": {
+        "title": "Welcome to Exideus Academy",
+        "subtitle": "Your AI Academy",
+        "description": "Discover the power of artificial intelligence through our comprehensive academy. Learn, grow, and transform with cutting-edge AI education."
+      },
+      "personas": {
+        "title": "AI Personas",
+        "subtitle": "Choose your learning path",
+        "medical": {
+          "title": "Medical AI",
+          "subtitle": "Compassionate Care & Evidence-Based Counseling",
+          "description": "Advanced healthcare AI solutions and medical diagnostics training.",
+          "features": {
+            "support": " Compassionate Support",
+            "advice": " Evidence-Based Counseling",
+            "insights": " Preventive Insights"
+          }
+        },
+        "sales": {
+          "title": "Sales AI",
+          "subtitle": "Consultative Selling & Relationship Building",
+          "description": "Boost your sales performance with AI-driven strategies and insights.",
+          "features": {
+            "value": " Value Creation",
+            "psychology": " Customer Psychology",
+            "objections": " Objection Handling"
+          }
+        },
+        "coaching": {
+          "title": "AI Coaching",
+          "subtitle": "Emotional Safety & Personal Growth",
+          "description": "Personal development and coaching enhanced by artificial intelligence.",
+          "features": {
+            "growth": " Inner Growth",
+            "resilience": " Emotional Resilience",
+            "reflection": " Guided Reflection"
+          }
+        },
+        "growth": {
+          "title": "Growth AI",
+          "subtitle": "Digital Business Scaling & Marketing Strategy",
+          "description": "Accelerate business growth with data-driven AI solutions.",
+          "features": {
+            "scaling": " Business Scaling",
+            "strategy": " Marketing Strategy",
+            "insights": " Action-Oriented Insights"
+          }
+        }
+      },
+      "archive": {
+        "title": "Knowledge Archive",
+        "subtitle": "Explore our comprehensive library",
+        "description": "Access thousands of resources, tutorials, and research papers in our ever-growing knowledge base.",
+        "explore": "Explore Archive",
+        "items": {
+          "future": {
+            "title": "Future of AI",
+            "description": "Discover visions and predictions about the development of human-AI collaboration."
+          },
+          "algorithms": {
+            "title": "Core Algorithms",
+            "description": "Unveil the mathematical foundations that enable intelligence and perception."
+          },
+          "transformation": {
+            "title": "Practical Transformation",
+            "description": "Learn how digital systems create real impact and change."
+          }
+        }
+      },
+      "auth": {
+        "login": {
+          "title": "Welcome Back",
+          "subtitle": "Sign in to your account",
+          "email": "Email",
+          "password": "Password",
+          "submit": "Sign In",
+          "noAccount": "Don't have an account?",
+          "signUpLink": "Sign up"
+        },
+        "signup": {
+          "title": "Create Account",
+          "subtitle": "Join our AI Academy",
+          "name": "Full Name",
+          "email": "Email",
+          "password": "Password",
+          "confirmPassword": "Confirm Password",
+          "submit": "Create Account",
+          "hasAccount": "Already have an account?",
+          "signInLink": "Sign in"
+        }
+      },
+      "footer": {
+        "rights": "All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "contact": "Contact"
+      },
+      "profile": {
+        "title": "Profile",
+        "subtitle": "Manage your account settings and preferences",
+        "displayName": "Display Name",
+        "displayNamePlaceholder": "Enter your display name",
+        "email": "Email",
+        "photoURL": "Profile Picture URL",
+        "photoURLPlaceholder": "Enter URL for profile picture",
+        "noDisplayName": "No display name set",
+        "noPhotoURL": "No profile picture set",
+        "editProfile": "Edit Profile",
+        "cancel": "Cancel",
+        "save": "Save",
+        "saving": "Saving...",
+        "profileUpdated": "Profile Updated",
+        "profileUpdatedDesc": "Your profile has been successfully updated.",
+        "profileError": "Error",
+        "profileErrorDesc": "Failed to update profile. Please try again.",
+        "logoutSuccess": "Logged Out",
+        "logoutSuccessDesc": "You have been successfully logged out.",
+        "logoutError": "Logout Failed",
+        "logoutErrorDesc": "Failed to logout. Please try again.",
+        "profileInfo": "Profile Information",
+        "profileInfoDesc": "View and update your personal information",
+        "account": "Account",
+        "accountDesc": "Manage your account settings",
+        "usage": "Usage",
+        "usageDesc": "Your portal usage statistics",
+        "conversations": "Conversations",
+        "portals": "Active Portals",
+        "messages": "Messages"
+      },
+      "settings": {
+        "title": "Settings",
+        "subtitle": "Manage your application preferences",
+        "preferences": "Preferences",
+        "preferencesDesc": "Customize your application experience",
+        "notifications": "Notifications",
+        "notificationsDesc": "Receive email notifications",
+        "darkMode": "Dark Mode",
+        "darkModeDesc": "Enable dark theme",
+        "language": "Language",
+        "languageDesc": "Select your preferred language",
+        "password": "Password",
+        "passwordDesc": "Change your password",
+        "currentPassword": "Current Password",
+        "newPassword": "New Password",
+        "confirmPassword": "Confirm New Password",
+        "changePassword": "Change Password",
+        "changing": "Changing...",
+        "passwordChanged": "Password Changed",
+        "passwordChangedDesc": "Your password has been successfully updated.",
+        "passwordError": "Password Change Failed",
+        "passwordErrorDesc": "Failed to change password. Please try again.",
+        "wrongPassword": "Current password is incorrect.",
+        "weakPassword": "New password is too weak. Please use a stronger password.",
+        "accountInfo": "Account Information",
+        "accountInfoDesc": "Your account details and security information",
+        "memberSince": "Member Since",
+        "lastLogin": "Last Login",
+        "email": "Email",
+        "userId": "User ID",
+        "saved": "Settings Saved",
+        "savedDesc": "Your settings have been successfully saved.",
+        "english": "English",
+        "german": "German",
+        "spanish": "Spanish",
+        "french": "French",
+        "savePreferences": "Save Preferences"
+      }
+    }
+  }
+}

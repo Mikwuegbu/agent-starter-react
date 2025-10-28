@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChevronDown, Globe, Menu } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
@@ -16,6 +16,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useConversation } from '@/context/ConversationContext';
 import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
+import { cn } from '@/lib/utils';
 
 // Language mapping: full language names for context, short codes for i18n
 const LANGUAGE_MAPPING = {
@@ -41,24 +42,31 @@ const LANGUAGE_FLAGS = {
 
 export const Navigation = () => {
   const { t, i18n } = useTranslation();
-
   const { push } = useRouter();
-  const { setLanguage, language, user } = useConversation();
+  const pathname = usePathname();
+  const { user } = useConversation();
   const { logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('i18nextLng') || 'en';
+    }
+    return 'en';
+  });
 
-  const changeLanguage = (fullLanguage: string) => {
-    const shortCode = LANGUAGE_MAPPING[fullLanguage as keyof typeof LANGUAGE_MAPPING] || 'en';
-    i18n.changeLanguage(shortCode);
-    setLanguage(fullLanguage);
+  // Update language in localStorage and i18n
+  const changeLanguage = (langCode: string) => {
+    // i18n.changeLanguage(langCode);
+    setCurrentLang(langCode);
+    push(`/${langCode}${pathname}`);
   };
 
   useEffect(() => {
-    if (language) {
-      const shortCode = LANGUAGE_MAPPING[language as keyof typeof LANGUAGE_MAPPING] || 'en';
+    if (currentLang) {
+      const shortCode = LANGUAGE_MAPPING[currentLang as keyof typeof LANGUAGE_MAPPING] || 'en';
       // i18n.changeLanguage(shortCode);
     }
-  }, [language]);
+  }, [currentLang]);
 
   return (
     <nav className="glass-card border-border/20 fixed top-0 z-50 w-full border-b">
@@ -77,37 +85,30 @@ export const Navigation = () => {
             {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="border-border/30 hover:border-accent/50">
+                <Button
+                  variant="outline"
+                  className="border-2 border-yellow-300 bg-none text-yellow-200 hover:border-yellow-300"
+                >
                   <Globe className="mr-2 h-4 w-4" />
-                  {language &&
-                    LANGUAGE_FLAGS[
-                      LANGUAGE_MAPPING[
-                        language as keyof typeof LANGUAGE_MAPPING
-                      ] as keyof typeof LANGUAGE_FLAGS
-                    ]}
-                  {language &&
-                    ' ' +
-                      (LANGUAGE_DISPLAY_NAMES[
-                        LANGUAGE_MAPPING[
-                          language as keyof typeof LANGUAGE_MAPPING
-                        ] as keyof typeof LANGUAGE_DISPLAY_NAMES
-                      ] || 'English')}
+                  {LANGUAGE_FLAGS[currentLang as keyof typeof LANGUAGE_FLAGS] || '🌐'}
+                  {LANGUAGE_DISPLAY_NAMES[currentLang as keyof typeof LANGUAGE_DISPLAY_NAMES] ||
+                    'English'}
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="glass-card border-border/30 bg-popover">
-                <DropdownMenuItem onClick={() => changeLanguage('english')}>
-                  🇺🇸 English
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => changeLanguage('german')}>
-                  🇩🇪 Deutsch
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => changeLanguage('spanish')}>
-                  🇪🇸 Español
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => changeLanguage('french')}>
-                  🇫🇷 Français
-                </DropdownMenuItem>
+                {Object.entries(LANGUAGE_DISPLAY_NAMES).map(([code, name]) => (
+                  <DropdownMenuItem
+                    key={code}
+                    onClick={() => changeLanguage(code)}
+                    className={cn(
+                      'flex items-center gap-2',
+                      currentLang === code ? 'bg-accent/10' : ''
+                    )}
+                  >
+                    {LANGUAGE_FLAGS[code as keyof typeof LANGUAGE_FLAGS]} {name}
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -187,17 +188,17 @@ export const Navigation = () => {
                         className="border-border/30 hover:border-accent/50 w-full justify-start"
                       >
                         <Globe className="mr-2 h-4 w-4" />
-                        {language &&
+                        {currentLang &&
                           LANGUAGE_FLAGS[
                             LANGUAGE_MAPPING[
-                              language as keyof typeof LANGUAGE_MAPPING
+                              currentLang as keyof typeof LANGUAGE_MAPPING
                             ] as keyof typeof LANGUAGE_FLAGS
                           ]}
-                        {language &&
+                        {currentLang &&
                           ' ' +
                             (LANGUAGE_DISPLAY_NAMES[
                               LANGUAGE_MAPPING[
-                                language as keyof typeof LANGUAGE_MAPPING
+                                currentLang as keyof typeof LANGUAGE_MAPPING
                               ] as keyof typeof LANGUAGE_DISPLAY_NAMES
                             ] || 'English')}
                         <ChevronDown className="ml-auto h-4 w-4" />

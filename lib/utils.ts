@@ -4,6 +4,16 @@ import { twMerge } from 'tailwind-merge';
 import { APP_CONFIG_DEFAULTS } from '@/app-config';
 import type { AppConfig } from '@/app-config';
 
+// Client-side detection
+export const isClient = (): boolean => {
+  return typeof window !== 'undefined';
+};
+
+// Utility for merging class names
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 export const CONFIG_ENDPOINT = process.env.NEXT_PUBLIC_APP_CONFIG_ENDPOINT;
 export const SANDBOX_ID = process.env.SANDBOX_ID;
 
@@ -16,10 +26,6 @@ export interface SandboxConfig {
     | { type: 'number'; value: number }
     | { type: 'boolean'; value: boolean }
     | null;
-}
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
 }
 
 // https://react.dev/reference/react/cache#caveats

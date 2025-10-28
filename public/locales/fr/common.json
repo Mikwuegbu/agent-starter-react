@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "akademie": "Académie",
+    "login": "Connexion",
+    "logoutError": "Échec de la déconnexion",
+    "logoutSuccess": "Déconnecté",
+    "logoutSuccessDesc": "Vous avez été déconnecté avec succès."
+  },
+  "hero": {
+    "title": "Bienvenue à l'Académie Exideus",
+    "subtitle": "Votre Académie d'IA",
+    "description": "Découvrez la puissance de l'intelligence artificielle grâce à notre académie complète."
+  },
+  "personas": {
+    "title": "Personnages IA",
+    "subtitle": "Choisissez votre parcours d'apprentissage",
+    "medical": {
+      "title": "IA Médicale",
+      "subtitle": "Soins compatissants et conseils fondés sur des preuves",
+      "description": "Solutions avancées d'IA pour les soins de santé.",
+      "features": {
+        "support": "🔮 Soutien compatissant",
+        "advice": "⚕️ Conseil basé sur des preuves",
+        "insights": "🧬 Perspectives préventives"
+      }
+    },
+    "sales": {
+      "title": "IA Commerciale",
+      "subtitle": "Vente conseil et développement relationnel",
+      "description": "Améliorez vos performances commerciales avec des stratégies d'IA.",
+      "features": {
+        "value": "💰 Création de valeur",
+        "psychology": "🧠 Psychologie du client",
+        "objections": "📈 Gestion des objections"
+      }
+    },
+    "coaching": {
+      "title": "Coaching par IA",
+      "subtitle": "Sécurité émotionnelle et développement personnel",
+      "description": "Développement personnel avec le soutien de l'IA.",
+      "features": {
+        "growth": "🌟 Croissance intérieure",
+        "resilience": "🎯 Résilience émotionnelle",
+        "reflection": "🔮 Réflexion guidée"
+      }
+    },
+    "growth": {
+      "title": "IA de Croissance",
+      "subtitle": "Développement commercial et marketing",
+      "description": "Accélérez la croissance avec des solutions d'IA.",
+      "features": {
+        "scaling": "🌟 Développement commercial",
+        "strategy": "🎯 Stratégie marketing",
+        "insights": "🔮 Perspectives exploitables"
+      }
+    }
+  },
+  "archive": {
+    "title": "Archive du savoir",
+    "subtitle": "Explorez notre bibliothèque",
+    "description": "Accédez à des milliers de ressources et tutoriels.",
+    "explore": "Explorer l'archive",
+    "items": {
+      "future": {
+        "title": "Avenir de l'IA",
+        "description": "Visions sur l'évolution de la collaboration avec l'IA."
+      },
+      "algorithms": {
+        "title": "Algorithmes clés",
+        "description": "Fondements mathématiques de l'IA."
+      },
+      "transformation": {
+        "title": "Transformation pratique",
+        "description": "Systèmes numériques en action."
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenue",
+      "subtitle": "Connectez-vous à votre compte",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "noAccount": "Pas de compte ?",
+      "signUpLink": "S'inscrire"
+    },
+    "signup": {
+      "title": "Créer un compte",
+      "subtitle": "Rejoignez notre académie",
+      "name": "Nom complet",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "submit": "Créer un compte",
+      "hasAccount": "Déjà inscrit ?",
+      "signInLink": "Se connecter"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d'utilisation",
+    "contact": "Contact"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Gérez vos préférences",
+    "language": "Langue",
+    "darkMode": "Mode sombre",
+    "savePreferences": "Enregistrer les préférences"
+  }
+}

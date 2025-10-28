@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "akademie": "Akademie",
+    "login": "Anmelden",
+    "logoutError": "Abmeldung fehlgeschlagen",
+    "logoutSuccess": "Abgemeldet",
+    "logoutSuccessDesc": "Sie wurden erfolgreich abgemeldet."
+  },
+  "hero": {
+    "title": "Willkommen bei der Exideus Akademie",
+    "subtitle": "Ihre KI-Akademie",
+    "description": "Entdecken Sie die Kraft der künstlichen Intelligenz durch unsere umfassende Akademie."
+  },
+  "personas": {
+    "title": "KI-Personas",
+    "subtitle": "Wählen Sie Ihren Lernpfad",
+    "medical": {
+      "title": "Medizinische KI",
+      "subtitle": "Mitfühlende Pflege & evidenzbasierte Beratung",
+      "description": "Fortgeschrittene KI-Lösungen für das Gesundheitswesen.",
+      "features": {
+        "support": "🔮 Mitfühlende Unterstützung",
+        "advice": "⚕️ Evidenzbasierte Beratung",
+        "insights": "🧬 Präventive Einblicke"
+      }
+    },
+    "sales": {
+      "title": "Verkaufs-KI",
+      "subtitle": "Beratender Verkauf & Beziehungsaufbau",
+      "description": "Steigern Sie Ihre Verkaufsleistung mit KI-Strategien.",
+      "features": {
+        "value": "💰 Wertschöpfung",
+        "psychology": "🧠 Kundenpsychologie",
+        "objections": "📈 Einwandbehandlung"
+      }
+    },
+    "coaching": {
+      "title": "KI-Coaching",
+      "subtitle": "Emotionale Sicherheit & persönliches Wachstum",
+      "description": "Persönlichkeitsentwicklung mit KI-Unterstützung.",
+      "features": {
+        "growth": "🌟 Inneres Wachstum",
+        "resilience": "🎯 Emotionale Belastbarkeit",
+        "reflection": "🔮 Geführte Reflexion"
+      }
+    },
+    "growth": {
+      "title": "Wachstums-KI",
+      "subtitle": "Digitale Geschäftsskalierung & Marketing",
+      "description": "Beschleunigen Sie das Unternehmenswachstum mit KI.",
+      "features": {
+        "scaling": "🌟 Geschäftsskalierung",
+        "strategy": "🎯 Marketingstrategie",
+        "insights": "🔮 Handlungsorientierte Erkenntnisse"
+      }
+    }
+  },
+  "archive": {
+    "title": "Wissensarchiv",
+    "subtitle": "Entdecken Sie unsere Bibliothek",
+    "description": "Zugriff auf Tausende von Ressourcen und Tutorials.",
+    "explore": "Archiv durchsuchen",
+    "items": {
+      "future": {
+        "title": "Zukunft der KI",
+        "description": "Visionen zur Entwicklung der KI-Zusammenarbeit."
+      },
+      "algorithms": {
+        "title": "Kernalgorithmen",
+        "description": "Mathematische Grundlagen der KI."
+      },
+      "transformation": {
+        "title": "Praktische Transformation",
+        "description": "Digitale Systeme im praktischen Einsatz."
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melden Sie sich an",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "noAccount": "Noch kein Konto?",
+      "signUpLink": "Registrieren"
+    },
+    "signup": {
+      "title": "Konto erstellen",
+      "subtitle": "Werden Sie Mitglied unserer Akademie",
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "submit": "Konto erstellen",
+      "hasAccount": "Bereits Mitglied?",
+      "signInLink": "Anmelden"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "Verwalten Sie Ihre Einstellungen",
+    "language": "Sprache",
+    "darkMode": "Dunkelmodus",
+    "savePreferences": "Einstellungen speichern"
+  }
+}
