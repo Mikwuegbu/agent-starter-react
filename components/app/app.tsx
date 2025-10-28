@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { RoomAudioRenderer, StartAudio } from '@livekit/components-react';
 import type { AppConfig } from '@/app-config';
 import { PersonaCard } from '@/components/PersonaCard';
@@ -21,6 +22,7 @@ interface AppProps {
 
 export function App({ appConfig }: AppProps) {
   const [clicked, setClicked] = useState(true);
+  const router = useRouter();
   const { t } = useTranslation();
   const { elementRef: titleRef } = useBaffle<HTMLHeadingElement>({
     characters: '█▓▒░/<>█▓▒░',
@@ -115,101 +117,100 @@ export function App({ appConfig }: AppProps) {
   };
 
   // Filter personas based on user settings
-  // const personas: Persona[] = allPersonas.filter((persona) =>
+  // const personas: Persona[] = allPersonssas.filter((persona) =>
   //   selectedAgents.includes(persona.portalType)
   // );
   const personas: Persona[] = allPersonas;
 
   const activatePortal = () => {
-    setClicked(false);
+    router.push('/call');
     // Add logic to activate the selected portal
   };
 
-  if (clicked) {
-    return (
-      <div className="">
-        {' '}
-        {/* Hero Section */}
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
-          {/* Background */}
-          <div className="absolute inset-0">
-            <Image
-              src={images.HERO_PORTAL}
-              alt="Exideus Academy Portal"
-              className="h-full w-full object-cover"
-              width={1920}
-              height={1080}
-              priority
-            />
-            <div className="bg-background/60 absolute inset-0" />
-          </div>
+  return (
+    <div className="">
+      {' '}
+      {/* Hero Section */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <Image
+            src={images.HERO_PORTAL}
+            alt="Exideus Academy Portal"
+            className="h-full w-full object-cover"
+            width={1920}
+            height={1080}
+            priority
+          />
+          <div className="bg-background/60 absolute inset-0" />
+        </div>
 
-          {/* Content */}
-          <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
-            <h1
-              ref={titleRef}
-              className="font-heading hero-text mb-6 text-4xl font-bold sm:text-5xl md:text-7xl"
-            >
-              {t('hero.title')}
-            </h1>
-            <p className="text-accent mb-8 text-lg font-medium sm:text-xl md:text-2xl">
-              {t('hero.subtitle')}
-            </p>
-            <div className="gold-accent mb-12 text-4xl">◆</div>
-            <p className="text-muted-foreground mx-auto mb-12 max-w-3xl text-base leading-relaxed sm:text-lg">
-              {t('hero.description')}
-            </p>
-          </div>
-        </section>
-        {/* Personas Section */}
-        <section className="from-background to-muted/20 bg-gradient-to-b py-12 sm:py-24">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="mb-12 text-center sm:mb-16">
-              <h2 className="font-heading text-primary mb-4 text-3xl font-semibold sm:text-4xl md:text-5xl">
-                {t('personas.title')}
-              </h2>
-              <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
-                {t('personas.subtitle')}
-              </p>
-            </div>
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-3">
-              {personas.map((persona, index) => (
-                <PersonaCard
-                  key={index}
-                  portalType={persona.portalType}
-                  title={persona.title}
-                  subtitle={persona.subtitle}
-                  description={persona.description}
-                  features={persona.features}
-                  imageUrl={persona.imageUrl}
-                  imageAlt={persona.imageAlt}
-                  videoUrl={persona.videoUrl}
-                  onClick={activatePortal}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-        {/* Archive Section */}
-        <ArchiveSection />
-        {/* Call to Action */}
-        <section className="py-12 text-center sm:py-24">
-          <div className="container mx-auto px-4 sm:px-6">
-            <h2 className="font-heading hero-text mb-8 text-3xl font-semibold sm:text-4xl">
-              {t('nav.login')}
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <h1
+            ref={titleRef}
+            className="font-heading hero-text mb-6 text-4xl font-bold sm:text-5xl md:text-7xl"
+          >
+            {t('hero.title')}
+          </h1>
+          <p className="text-accent mb-8 text-lg font-medium sm:text-xl md:text-2xl">
+            {t('hero.subtitle')}
+          </p>
+          <div className="gold-accent mb-12 text-4xl">◆</div>
+          <p className="text-muted-foreground mx-auto mb-12 max-w-3xl text-base leading-relaxed sm:text-lg">
+            {t('hero.description')}
+          </p>
+        </div>
+      </section>
+      {/* Personas Section */}
+      <section className="from-background to-muted/20 bg-gradient-to-b py-12 sm:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="mb-12 text-center sm:mb-16">
+            <h2 className="font-heading text-primary mb-4 text-3xl font-semibold sm:text-4xl md:text-5xl">
+              {t('personas.title')}
             </h2>
-            <Link href="/login">
-              <Button
-                // size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-base font-medium sm:px-12 sm:text-lg"
-              >
-                {t('nav.akademie')}
-              </Button>
-            </Link>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
+              {t('personas.subtitle')}
+            </p>
           </div>
-        </section>
-        {/* Loading Dialog */}
-        {/* <Dialog open={isCreatingConversation}>
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-3">
+            {personas.map((persona, index) => (
+              <PersonaCard
+                key={index}
+                portalType={persona.portalType}
+                title={persona.title}
+                subtitle={persona.subtitle}
+                description={persona.description}
+                features={persona.features}
+                imageUrl={persona.imageUrl}
+                imageAlt={persona.imageAlt}
+                videoUrl={persona.videoUrl}
+                onClick={activatePortal}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Archive Section */}
+      <ArchiveSection />
+      {/* Call to Action */}
+      <section className="py-12 text-center sm:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
+          <h2 className="font-heading hero-text mb-8 text-3xl font-semibold sm:text-4xl">
+            {t('nav.login')}
+          </h2>
+          <Link href="/login">
+            <Button
+              // size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-base font-medium sm:px-12 sm:text-lg"
+            >
+              {t('nav.akademie')}
+            </Button>
+          </Link>
+        </div>
+      </section>
+      {/* Loading Dialog */}
+      {/* <Dialog open={isCreatingConversation}>
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
               <DialogTitle className="text-center">Preparing Your Portal</DialogTitle>
@@ -222,17 +223,6 @@ export function App({ appConfig }: AppProps) {
             </div>
           </DialogContent>
         </Dialog> */}
-      </div>
-    );
-  } else
-    return (
-      <SessionProvider appConfig={appConfig}>
-        <main className="grid h-svh grid-cols-1 place-content-center">
-          <ViewController />
-        </main>
-        <StartAudio label="Start Audio" />
-        <RoomAudioRenderer />
-        <Toaster />
-      </SessionProvider>
-    );
+    </div>
+  );
 }
